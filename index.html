@@ -36,28 +36,28 @@
             const [selectedInstructor, setSelectedInstructor] = useState(null);
             const [showToast, setShowToast] = useState(false);
 
-            // 데이터 업데이트: 최정은 8/13 추가
+            // 데이터 업데이트: 이은주 강사 8/7, 8/14 추가 반영 (가나다순 정렬 완료)
             const scheduleData = [
                 { date: '8/3', day: '월', isOff: false, instructors: ['권봉채', '이봉헌'] },
                 { date: '8/4', day: '화', isOff: false, instructors: ['권봉채', '이은주'] },
                 { date: '8/5', day: '수', isOff: false, instructors: ['공수진'] },
                 { date: '8/6', day: '목', isOff: false, instructors: ['권봉채', '신명수', '이봉헌', '이은희', '최정은'] },
-                { date: '8/7', day: '금', isOff: false, instructors: ['권봉채', '신명수', '유경', '이봉헌', '최정은'] },
+                { date: '8/7', day: '금', isOff: false, instructors: ['권봉채', '신명수', '유경', '이봉헌', '이은주', '최정은'] },
                 { date: '8/10', day: '월', isOff: false, instructors: ['이봉헌'] },
                 { date: '8/11', day: '화', isOff: true, instructors: [] },
                 { date: '8/12', day: '수', isOff: false, instructors: ['공수진', '신명수'] },
                 { date: '8/13', day: '목', isOff: false, instructors: ['공수진', '신명수', '이은주', '이은희', '최정은'] },
-                { date: '8/14', day: '금', isOff: false, instructors: ['공수진', '신명수', '유경', '이봉헌', '이은희', '진숙희', '최정은'] },
+                { date: '8/14', day: '금', isOff: false, instructors: ['공수진', '신명수', '유경', '이봉헌', '이은주', '이은희', '진숙희', '최정은'] },
             ];
 
-            // 강사 횟수 업데이트: 최정은 4회로 변경
+            // 강사 횟수 업데이트: 이은주 4회로 변경
             const instructors = [
                 { name: '공수진', count: 4 },
                 { name: '권봉채', count: 4 },
                 { name: '신명수', count: 5 },
                 { name: '유경', count: 2 },
                 { name: '이봉헌', count: 6 },
-                { name: '이은주', count: 2 },
+                { name: '이은주', count: 4 },
                 { name: '이은희', count: 3 },
                 { name: '진숙희', count: 1 },
                 { name: '최정은', count: 4 },
@@ -216,5 +216,3 @@
     </script>
 </body>
 </html>
-
-
