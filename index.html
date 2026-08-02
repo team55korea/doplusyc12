@@ -4,108 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강의 일정표</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Pretendard', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 sm:p-8">
 
-    <div class="w-full max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">
+        
         <!-- 상단 헤더 정보 -->
-        <div class="bg-gradient-to-r from-indigo-600 to-blue-600 px-6 py-4 text-white">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div class="bg-blue-600 px-6 py-5 text-white">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <span class="bg-white/20 text-xs font-semibold px-2.5 py-0.5 rounded-full">2026년 8월 1~2주차</span>
-                    <h1 class="text-xl font-bold mt-1">한국지역난방공사와 두플러스교육</h1>
+                    <span class="bg-white/20 text-xs font-semibold px-2.5 py-1 rounded-full inline-block mb-2">2026년 8월 1~2주차</span>
+                    <h1 class="text-2xl font-bold">한국지역난방공사와 두플러스교육</h1>
                 </div>
-                <div class="text-xs space-y-0.5 text-blue-100">
-                    <p class="flex items-center gap-1.5">
+                <div class="text-sm space-y-1 text-blue-50 md:text-right">
+                    <p class="flex items-center md:justify-end gap-1.5">
                         <span class="font-semibold text-white">장소:</span> 마포 함께일하는재단 강당 (월드컵북로6길 36)
-                        <a href="https://naver.me/IFwThtkM" target="_blank" class="underline text-blue-200 hover:text-white font-medium ml-1">[지도]</a>
+                        <a href="https://naver.me/IFwThtkM" target="_blank" class="underline text-white font-medium ml-1 hover:text-blue-200">[지도]</a>
                     </p>
                     <p><span class="font-semibold text-white">시간:</span> 13:30 ~ 17:30 (총 4시간)</p>
                 </div>
             </div>
-    <div id="root"></div>
+        </div>
 
-    <script type="text/babel">
-        const { useState } = React;
+        <div class="p-5">
+            <!-- 요일 헤더 -->
+            <div class="grid grid-cols-5 gap-3 text-center mb-3">
+                <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">월요일</div>
+                <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">화요일</div>
+                <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">수요일</div>
+                <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">목요일</div>
+                <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">금요일</div>
+            </div>
 
-        const IconUsers = ({ className }) => <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>;
-        const IconUser = ({ className }) => <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>;
-        const IconCalendar = ({ className }) => <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>;
-
-        const scheduleData = [
-            { date: '8/3', day: '월', instructors: ['권봉채', '이봉헌'] },
-            { date: '8/4', day: '화', instructors: ['이은주', '이은희'] },
-            { date: '8/5', day: '수', instructors: ['공수진', '권봉채'] },
-            { date: '8/6', day: '목', instructors: ['신명수', '최정은'] },
-            { date: '8/7', day: '금', instructors: ['유경', '이은희'] },
-            { date: '8/10', day: '월', instructors: ['이봉헌', '이은희'] },
-            { date: '8/11', day: '화', instructors: ['공수진', '권봉채'] },
-            { date: '8/12', day: '수', instructors: ['공수진', '신명수'] },
-            { date: '8/13', day: '목', instructors: ['이은주', '최정은'] },
-            { date: '8/14', day: '금', instructors: ['유경', '최정은'] },
-        ];
-
-        const instructors = [
-            { name: '공수진', count: 3 },
-            { name: '권봉채', count: 3 },
-            { name: '신명수', count: 2 },
-            { name: '유경', count: 2 },
-            { name: '이봉헌', count: 2 },
-            { name: '이은주', count: 2 },
-            { name: '이은희', count: 3 },
-            { name: '최정은', count: 3 },
-        ];
-
-        function App() {
-            const [selectedInstructor, setSelectedInstructor] = useState(null);
-
-            return (
-                <div className="min-h-screen p-4 sm:p-8">
-                    <div className="max-w-4xl mx-auto">
-                        <header className="mb-8">
-                            <h1 className="text-2xl font-bold text-slate-800">한국지역난방공사 강의 일정표</h1>
-                            <p className="text-slate-500 text-sm mt-1">최종 확정된 날짜별 상세 일정입니다.</p>
-                        </header>
-
-                        <div className="mb-6 flex flex-wrap gap-2">
-                            {instructors.map((inst) => (
-                                <button
-                                    key={inst.name}
-                                    onClick={() => setSelectedInstructor(selectedInstructor === inst.name ? null : inst.name)}
-                                    className={`px-3 py-1.5 rounded-full text-sm font-medium border ${selectedInstructor === inst.name ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300'}`}
-                                >
-                                    {inst.name} ({inst.count}회)
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                            {scheduleData.map((day, index) => (
-                                <div key={index} className={`bg-white rounded-xl shadow-sm border p-4 ${selectedInstructor && !day.instructors.includes(selectedInstructor) ? 'opacity-40' : 'border-slate-200'}`}>
-                                    <div className="text-sm font-bold text-blue-600 mb-2 border-b pb-1">{day.date} ({day.day})</div>
-                                    <div className="space-y-1">
-                                        {day.instructors.map((name, i) => (
-                                            <div key={i} className="flex items-center text-xs text-slate-700 bg-slate-50 px-2 py-1 rounded">
-                                                <IconUser className="w-3 h-3 mr-1.5 text-slate-400" />
-                                                {name}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+            <div class="grid grid-cols-5 gap-3 mb-3">
+                <!-- 8월 3일 (월) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/3 (월)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">권봉채</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이봉헌</div>
                     </div>
                 </div>
-            );
-        }
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+                <!-- 8월 4일 (화) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/4 (화)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은주</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은희</div>
+                    </div>
+                </div>
+
+                <!-- 8월 5일 (수) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/5 (수)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">공수진</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">권봉채</div>
+                    </div>
+                </div>
+
+                <!-- 8월 6일 (목) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/6 (목)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">신명수</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">최정은</div>
+                    </div>
+                </div>
+
+                <!-- 8월 7일 (금) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/7 (금)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">유경</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은희</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-5 gap-3">
+                <!-- 8월 10일 (월) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/10 (월)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이봉헌</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">최정은</div>
+                    </div>
+                </div>
+
+                <!-- 8월 11일 (화) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/11 (화)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">공수진</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">권봉채</div>
+                    </div>
+                </div>
+
+                <!-- 8월 12일 (수) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/12 (수)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">공수진</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">신명수</div>
+                    </div>
+                </div>
+
+                <!-- 8월 13일 (목) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/13 (목)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은주</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은희</div>
+                    </div>
+                </div>
+
+                <!-- 8월 14일 (금) -->
+                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
+                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/14 (금)</span>
+                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">유경</div>
+                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">최정은</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-200">
+                <h3 class="text-sm font-bold text-slate-700 mb-3">📋 강사별 참가 일지</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">공수진</span> <span class="text-slate-500 font-medium">(3회)</span>
+                        <div class="text-slate-600 mt-1">8/5, 8/11, 8/12</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">권봉채</span> <span class="text-slate-500 font-medium">(3회)</span>
+                        <div class="text-slate-600 mt-1">8/3, 8/5, 8/11</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">신명수</span> <span class="text-slate-500 font-medium">(2회)</span>
+                        <div class="text-slate-600 mt-1">8/6, 8/12</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">유경</span> <span class="text-slate-500 font-medium">(2회)</span>
+                        <div class="text-slate-600 mt-1">8/7, 8/14</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">이봉헌</span> <span class="text-slate-500 font-medium">(2회)</span>
+                        <div class="text-slate-600 mt-1">8/3, 8/10</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">이은주</span> <span class="text-slate-500 font-medium">(2회)</span>
+                        <div class="text-slate-600 mt-1">8/4, 8/13</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">이은희</span> <span class="text-slate-500 font-medium">(3회)</span>
+                        <div class="text-slate-600 mt-1">8/4, 8/7, 8/13</div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span class="font-bold text-blue-700 text-sm">최정은</span> <span class="text-slate-500 font-medium">(3회)</span>
+                        <div class="text-slate-600 mt-1">8/6, 8/10, 8/14</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
