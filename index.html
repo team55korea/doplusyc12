@@ -36,13 +36,13 @@
             const [selectedInstructor, setSelectedInstructor] = useState(null);
             const [showToast, setShowToast] = useState(false);
 
-            // 데이터 업데이트: 일정 조정 및 8/11 활성화 적용, 가나다순 정렬
+            // 데이터 업데이트: 이은주 8/7 삭제 적용, 가나다순 정렬
             const scheduleData = [
                 { date: '8/3', day: '월', isOff: false, instructors: ['권봉채', '이봉헌'] },
                 { date: '8/4', day: '화', isOff: false, instructors: ['권봉채', '이은주', '이은희'] },
                 { date: '8/5', day: '수', isOff: false, instructors: ['공수진', '권봉채'] },
                 { date: '8/6', day: '목', isOff: false, instructors: ['권봉채', '신명수', '최정은'] },
-                { date: '8/7', day: '금', isOff: false, instructors: ['신명수', '유경', '이은주', '이은희', '최정은'] },
+                { date: '8/7', day: '금', isOff: false, instructors: ['신명수', '유경', '이은희', '최정은'] },
                 { date: '8/10', day: '월', isOff: false, instructors: ['이봉헌'] },
                 { date: '8/11', day: '화', isOff: false, instructors: ['이은희'] },
                 { date: '8/12', day: '수', isOff: false, instructors: ['공수진', '신명수'] },
@@ -57,7 +57,7 @@
                 { name: '신명수', count: 3 },
                 { name: '유경', count: 2 },
                 { name: '이봉헌', count: 2 },
-                { name: '이은주', count: 4 },
+                { name: '이은주', count: 3 },
                 { name: '이은희', count: 4 },
                 { name: '진숙희', count: 1 },
                 { name: '최정은', count: 4 },
