@@ -8,30 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Pretendard', sans-serif; }
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4 sm:p-8">
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
 
-    <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">
+    <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
         
-        <!-- 상단 헤더 정보 -->
-        <div class="bg-blue-600 px-6 py-5 text-white">
+        <!-- 상단 헤더 영역 -->
+        <div class="bg-[#4F46E5] px-6 py-5 text-white">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <span class="bg-white/20 text-xs font-semibold px-2.5 py-1 rounded-full inline-block mb-2">2026년 8월 1~2주차</span>
+                    <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full inline-block mb-2">
+                        2026년 8월 1~2주차
+                    </span>
                     <h1 class="text-2xl font-bold">한국지역난방공사와 두플러스교육</h1>
                 </div>
-                <div class="text-sm space-y-1 text-blue-50 md:text-right">
+                <div class="text-sm space-y-1 text-indigo-100 md:text-right">
                     <p class="flex items-center md:justify-end gap-1.5">
                         <span class="font-semibold text-white">장소:</span> 마포 함께일하는재단 강당 (월드컵북로6길 36)
-                        <a href="https://naver.me/IFwThtkM" target="_blank" class="underline text-white font-medium ml-1 hover:text-blue-200">[지도]</a>
+                        <a href="https://naver.me/IFwThtkM" target="_blank" rel="noreferrer" class="underline text-white font-medium ml-1 hover:text-indigo-200">
+                            [지도]
+                        </a>
                     </p>
-                    <p><span class="font-semibold text-white">시간:</span> 13:30 ~ 17:30 (총 4시간)</p>
+                    <p>
+                        <span class="font-semibold text-white">시간:</span> 13:30 ~ 17:30 (총 4시간)
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="p-5">
+        <div class="p-6">
             <!-- 요일 헤더 -->
             <div class="grid grid-cols-5 gap-3 text-center mb-3">
                 <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">월요일</div>
@@ -41,139 +48,192 @@
                 <div class="font-bold text-slate-600 text-sm py-2 bg-slate-100 rounded-lg">금요일</div>
             </div>
 
-            <div class="grid grid-cols-5 gap-3 mb-3">
-                <!-- 8월 3일 (월) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/3 (월)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">권봉채</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이봉헌</div>
-                    </div>
-                </div>
-
-                <!-- 8월 4일 (화) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/4 (화)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은주</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은희</div>
-                    </div>
-                </div>
-
-                <!-- 8월 5일 (수) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/5 (수)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">공수진</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">권봉채</div>
-                    </div>
-                </div>
-
-                <!-- 8월 6일 (목) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/6 (목)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">신명수</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">최정은</div>
-                    </div>
-                </div>
-
-                <!-- 8월 7일 (금) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/7 (금)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">유경</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은희</div>
-                    </div>
-                </div>
+            <div id="calendar-grid-1" class="grid grid-cols-5 gap-3 mb-3">
+                <!-- 1주차 달력 카드가 여기에 동적으로 생성됩니다. -->
             </div>
 
-            <div class="grid grid-cols-5 gap-3">
-                <!-- 8월 10일 (월) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/10 (월)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이봉헌</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은희</div>
-                    </div>
-                </div>
-
-                <!-- 8월 11일 (화) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/11 (화)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">공수진</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">권봉채</div>
-                    </div>
-                </div>
-
-                <!-- 8월 12일 (수) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/12 (수)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">공수진</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">신명수</div>
-                    </div>
-                </div>
-
-                <!-- 8월 13일 (목) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/13 (목)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">이은주</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">최정은</div>
-                    </div>
-                </div>
-
-                <!-- 8월 14일 (금) -->
-                <div class="border border-blue-100 rounded-lg p-2.5 flex flex-col min-h-[120px]">
-                    <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-md mb-2 text-center block">8/14 (금)</span>
-                    <div class="space-y-1.5 text-sm text-slate-700 font-medium">
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">유경</div>
-                        <div class="bg-white px-2.5 py-1.5 rounded border border-slate-100 shadow-sm">최정은</div>
-                    </div>
-                </div>
+            <div id="calendar-grid-2" class="grid grid-cols-5 gap-3">
+                <!-- 2주차 달력 카드가 여기에 동적으로 생성됩니다. -->
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-200">
-                <h3 class="text-sm font-bold text-slate-700 mb-3">📋 강사별 참가 일지</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">공수진</span> <span class="text-slate-500 font-medium">(3회)</span>
-                        <div class="text-slate-600 mt-1">8/5, 8/11, 8/12</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">권봉채</span> <span class="text-slate-500 font-medium">(3회)</span>
-                        <div class="text-slate-600 mt-1">8/3, 8/5, 8/11</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">신명수</span> <span class="text-slate-500 font-medium">(2회)</span>
-                        <div class="text-slate-600 mt-1">8/6, 8/12</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">유경</span> <span class="text-slate-500 font-medium">(2회)</span>
-                        <div class="text-slate-600 mt-1">8/7, 8/14</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">이봉헌</span> <span class="text-slate-500 font-medium">(2회)</span>
-                        <div class="text-slate-600 mt-1">8/3, 8/10</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">이은주</span> <span class="text-slate-500 font-medium">(2회)</span>
-                        <div class="text-slate-600 mt-1">8/4, 8/13</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">이은희</span> <span class="text-slate-500 font-medium">(3회)</span>
-                        <div class="text-slate-600 mt-1">8/4, 8/7, 8/10</div>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span class="font-bold text-blue-700 text-sm">최정은</span> <span class="text-slate-500 font-medium">(3회)</span>
-                        <div class="text-slate-600 mt-1">8/6, 8/13, 8/14</div>
-                    </div>
+            <div class="mt-8 pt-5 border-t border-slate-200">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center">
+                        📋 강사별 참가 일지 
+                        <span class="ml-2 text-[11px] font-normal text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-full">
+                            이름을 클릭하면 일정을 확인할 수 있습니다 ✨
+                        </span>
+                    </h3>
+                    <button 
+                        id="reset-btn"
+                        class="text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-full transition-colors cursor-pointer hidden border border-indigo-200"
+                    >
+                        선택 초기화 ↺
+                    </button>
+                </div>
+                
+                <div id="summary-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                    <!-- 요약 카드가 여기에 동적으로 생성됩니다. -->
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        // 사용자가 최종 요청한 이미지 기반 100% 일치 데이터
+        const scheduleData = [
+            { id: '8/3', date: '8/3 (월)', names: ['권봉채', '이봉헌'] },
+            { id: '8/4', date: '8/4 (화)', names: ['권봉채', '이은주'] },
+            { id: '8/5', date: '8/5 (수)', names: ['공수진', '권봉채'] },
+            { id: '8/6', date: '8/6 (목)', names: ['신명수', '최정은'] },
+            { id: '8/7', date: '8/7 (금)', names: ['유경', '이은희'] },
+            { id: '8/10', date: '8/10 (월)', names: ['이봉헌', '이은희'] },
+            { id: '8/11', date: '8/11 (화)', names: ['공수진', '권봉채'] },
+            { id: '8/12', date: '8/12 (수)', names: ['공수진', '신명수'] },
+            { id: '8/13', date: '8/13 (목)', names: ['이은주', '최정은'] },
+            { id: '8/14', date: '8/14 (금)', names: ['유경', '최정은'] }
+        ];
+
+        const summaryData = [
+            { name: '공수진', count: 3, dates: '8/5, 8/11, 8/12' },
+            { name: '권봉채', count: 4, dates: '8/3, 8/4, 8/5, 8/11' },
+            { name: '신명수', count: 2, dates: '8/6, 8/12' },
+            { name: '유경', count: 2, dates: '8/7, 8/14' },
+            { name: '이봉헌', count: 2, dates: '8/3, 8/10' },
+            { name: '이은주', count: 2, dates: '8/4, 8/13' },
+            { name: '이은희', count: 2, dates: '8/7, 8/10' },
+            { name: '최정은', count: 3, dates: '8/6, 8/13, 8/14' }
+        ];
+
+        let selectedInstructor = null;
+
+        function renderCalendar() {
+            const grid1 = document.getElementById('calendar-grid-1');
+            const grid2 = document.getElementById('calendar-grid-2');
+            grid1.innerHTML = '';
+            grid2.innerHTML = '';
+
+            scheduleData.forEach((day, index) => {
+                const hasSelected = selectedInstructor ? day.names.includes(selectedInstructor) : false;
+                const isFaded = selectedInstructor && !hasSelected;
+
+                // 카드 스타일 정의 (가장 깔끔했던 이전 버전 스타일)
+                let cardClasses = `border rounded-lg p-2.5 flex flex-col min-h-[110px] transition-all bg-white `;
+                if (isFaded) {
+                    cardClasses += `border-slate-100 opacity-30 grayscale`;
+                } else if (hasSelected) {
+                    cardClasses += `border-[#4F46E5] ring-2 ring-[#4F46E5] ring-opacity-50 shadow-md`;
+                } else {
+                    cardClasses += `border-blue-100`;
+                }
+
+                // 날짜 헤더 스타일
+                let headerClasses = `text-xs font-bold px-2 py-1 rounded-md mb-2 text-center block `;
+                if (hasSelected) {
+                    headerClasses += `bg-[#4F46E5] text-white`;
+                } else {
+                    headerClasses += `bg-blue-50 text-blue-700`;
+                }
+
+                // 이름 태그 스타일
+                let namesHtml = day.names.map(name => {
+                    const isHighlighted = selectedInstructor === name;
+                    let nameClasses = `px-2 py-1.5 rounded border transition-all cursor-pointer text-sm font-medium mt-1.5 text-center `;
+                    
+                    if (isHighlighted) {
+                        nameClasses += `bg-[#4F46E5] border-[#4F46E5] text-white shadow-sm`;
+                    } else if (selectedInstructor) {
+                        nameClasses += `bg-white border-slate-100 text-slate-400`;
+                    } else {
+                        nameClasses += `bg-white border-slate-200 text-slate-700 shadow-sm hover:border-indigo-400 hover:text-indigo-600`;
+                    }
+
+                    return `
+                        <div class="${nameClasses}" onclick="toggleInstructor('${name}')">
+                            ${name}
+                        </div>
+                    `;
+                }).join('');
+
+                const cardHtml = `
+                    <div class="${cardClasses}">
+                        <span class="${headerClasses}">${day.date}</span>
+                        <div class="flex-1 flex flex-col justify-start">
+                            ${namesHtml}
+                        </div>
+                    </div>
+                `;
+
+                if (index < 5) {
+                    grid1.innerHTML += cardHtml;
+                } else {
+                    grid2.innerHTML += cardHtml;
+                }
+            });
+        }
+
+        function renderSummary() {
+            const summaryGrid = document.getElementById('summary-grid');
+            summaryGrid.innerHTML = '';
+
+            summaryData.forEach(inst => {
+                const isSelected = selectedInstructor === inst.name;
+                const isFaded = selectedInstructor && !isSelected;
+
+                let cardClasses = `border rounded-lg p-3 cursor-pointer transition-all `;
+                if (isSelected) {
+                    cardClasses += `bg-[#4F46E5] border-[#4F46E5] text-white shadow-md transform scale-[1.02]`;
+                } else if (isFaded) {
+                    cardClasses += `bg-slate-50 border-slate-100 text-slate-400 opacity-50 grayscale`;
+                } else {
+                    cardClasses += `bg-white border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 text-slate-700`;
+                }
+
+                let nameClasses = `font-bold text-sm ${isSelected ? 'text-white' : 'text-indigo-700'}`;
+                let badgeClasses = `font-medium px-1.5 py-0.5 rounded-md ${isSelected ? 'bg-white/20' : 'bg-slate-100 text-slate-500'}`;
+                let datesClasses = isSelected ? 'text-indigo-100' : 'text-slate-500';
+
+                const cardHtml = `
+                    <div class="${cardClasses}" onclick="toggleInstructor('${inst.name}')">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="${nameClasses}">${inst.name}</span> 
+                            <span class="${badgeClasses}">${inst.count}회</span>
+                        </div>
+                        <div class="${datesClasses}">
+                            ${inst.dates}
+                        </div>
+                    </div>
+                `;
+                summaryGrid.innerHTML += cardHtml;
+            });
+
+            const resetBtn = document.getElementById('reset-btn');
+            if (selectedInstructor) {
+                resetBtn.classList.remove('hidden');
+            } else {
+                resetBtn.classList.add('hidden');
+            }
+        }
+
+        function toggleInstructor(name) {
+            if (selectedInstructor === name) {
+                selectedInstructor = null; // 이미 선택된 사람이면 해제
+            } else {
+                selectedInstructor = name; // 새로운 사람 선택
+            }
+            renderCalendar();
+            renderSummary();
+        }
+
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            selectedInstructor = null;
+            renderCalendar();
+            renderSummary();
+        });
+
+        // 처음 화면 진입 시 그리기
+        renderCalendar();
+        renderSummary();
+    </script>
 </body>
 </html>
